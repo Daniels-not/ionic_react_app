@@ -1,13 +1,15 @@
+import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+
+// Import the SVG file
+import toolboxSVG from '../assets/icons8-toolbox.svg';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -16,7 +18,10 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        {/* Display the SVG image */}
+        <div className="flex justify-center items-center h-full">
+          <img src={toolboxSVG} alt="Toolbox" className="h-40 w-auto" />
+        </div>
       </IonContent>
     </IonPage>
   );
