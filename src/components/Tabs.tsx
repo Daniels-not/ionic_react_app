@@ -1,55 +1,73 @@
 import React from 'react';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonRouterOutlet } from '@ionic/react';
-import { flameOutline, newspaperOutline, waterOutline, schoolOutline, personOutline, accessibilityOutline} from 'ionicons/icons';
-import { Route, Redirect } from 'react-router-dom';
+import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar, IonRouterLink, IonIcon, IonLabel } from '@ionic/react';
+import { flameOutline, newspaperOutline, waterOutline, schoolOutline, personOutline, accessibilityOutline, menuOutline } from 'ionicons/icons';
 import Home from '../pages/Home';
-import NewsView from '../pages/NewsView';
-import WeatherForecast from '../pages/WeatherForecast';
-import UniversitySearch from '../pages/UniversitySearch';
-import AgePrediction from '../pages/AgePrediction';
-import GenderPrediction from '../pages/GenderPrediction';
 
-const Tabs: React.FC = () => (
-  <IonTabs>
-    <IonRouterOutlet>
-      {/* Define your routes for each tab */}
-      <Route path="/tabs/Home" component={Home} exact={true} />
-      <Route path="/tabs/News" component={NewsView} exact={true} />
-      <Route path="/tabs/Weather" component={WeatherForecast} exact={true} />
-      <Route path="/tabs/UniversitySearch" component={UniversitySearch} exact={true} />
-      <Route path="/tabs/AgePrediction" component={AgePrediction} exact={true} />
-      <Route path="/tabs/GenderPredictor" component={GenderPrediction} exact={true} />
-      <Redirect exact from="/tabs" to="/tabs/Home" />
-    </IonRouterOutlet>
-    
-    <IonTabBar slot="bottom" className="rounded">
-      {/* Define each tab button */}
-      <IonTabButton tab="Home" href="/tabs/Home">
-        <IonIcon icon={flameOutline} />
-        <IonLabel>Home</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="News" href="/tabs/News">
-        <IonIcon icon={newspaperOutline} />
-        <IonLabel>News</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="Weather" href="/tabs/Weather">
-        <IonIcon icon={waterOutline} />
-        <IonLabel>Weather</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="UniversitySearch" href="/tabs/UniversitySearch">
-        <IonIcon icon={schoolOutline}/>
-        <IonLabel>University Search</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="AgePrediction" href="/tabs/AgePrediction">
-        <IonIcon icon={personOutline}/>
-        <IonLabel>Age Prediction</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="GenderPredictor" href="/tabs/GenderPredictor">
-        <IonIcon icon={accessibilityOutline}/>
-        <IonLabel>Gender Prediction</IonLabel>
-      </IonTabButton>
-    </IonTabBar>
-  </IonTabs>
-);
+function Tabs() {
+  return (
+    <>
+      {/* Sidebar */}
+      <IonMenu contentId="main-content" type="overlay">
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Menu Content</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <ul className="ion-padding">
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={flameOutline} className="text-3xl" />
+                <IonLabel className="text-base">Home</IonLabel>
+              </IonRouterLink>
+            </li>
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/tabs/News" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={newspaperOutline} className="text-3xl" />
+                <IonLabel className="text-base">News</IonLabel>
+              </IonRouterLink>
+            </li>
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/tabs/Weather" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={waterOutline} className="text-3xl" />
+                <IonLabel className="text-base">Weather</IonLabel>
+              </IonRouterLink>
+            </li>
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/tabs/UniversitySearch" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={schoolOutline} className="text-3xl" />
+                <IonLabel className="text-base">University Search</IonLabel>
+              </IonRouterLink>
+            </li>
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/tabs/AgePrediction" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={personOutline} className="text-3xl" />
+                <IonLabel className="text-base">Age Prediction</IonLabel>
+              </IonRouterLink>
+            </li>
+            <li className="ion-margin-bottom">
+              <IonRouterLink routerLink="/tabs/GenderPredictor" routerDirection="none" className="ion-link flex items-center space-x-2 text-sm">
+                <IonIcon icon={accessibilityOutline} className="text-3xl" />
+                <IonLabel className="text-base">Gender Prediction</IonLabel>
+              </IonRouterLink>
+            </li>
+          </ul>
+        </IonContent>
+      </IonMenu>
+
+      {/* Main content */}
+      <IonPage id="main-content">
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonMenuButton autoHide={false} />
+            </IonButtons>
+            <IonTitle>Main</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+      </IonPage>
+    </>
+  );
+}
 
 export default Tabs;
