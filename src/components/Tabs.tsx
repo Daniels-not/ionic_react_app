@@ -60,7 +60,7 @@ function Tabs() {
         <IonHeader>
           <IonToolbar>
             <IonButtons slot="start">
-              <IonMenuButton autoHide={false} />
+              <IonMenuButton />
             </IonButtons>
             <IonTitle>Main</IonTitle>
           </IonToolbar>

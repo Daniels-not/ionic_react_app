@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         </IonHeader>
         {/* Display the SVG image */}
         <div className="flex justify-center items-center h-full">
-          <img src={toolboxSVG} alt="Toolbox" className="h-40 w-auto" />
+          <img src={toolboxSVG} alt="Toolbox" className="h-50 w-auto" />
         </div>
       </IonContent>
     </IonPage>
