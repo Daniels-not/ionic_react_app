@@ -17,10 +17,10 @@ const Home: React.FC = () => {
           <IonToolbar>
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
-        </IonHeader>
+        </IonHeader> 
         {/* Display the SVG image */}
         <div className="flex justify-center items-center h-full">
-          <img src={toolboxSVG} alt="Toolbox" className="h-50 w-auto" />
+          <img src={toolboxSVG} alt="Toolbox" className="h-42 w-auto" />
         </div>
       </IonContent>
     </IonPage>
