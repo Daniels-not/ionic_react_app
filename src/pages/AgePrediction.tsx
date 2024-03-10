@@ -51,6 +51,7 @@ const AgePrediction: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButton slot="start" />
           <IonTitle>Age Predictor</IonTitle>
         </IonToolbar>
       </IonHeader>

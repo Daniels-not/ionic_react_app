@@ -21,6 +21,7 @@ const GenderPrediction: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButton slot="start" />
           <IonTitle>Gender Predictor</IonTitle>
         </IonToolbar>
       </IonHeader>

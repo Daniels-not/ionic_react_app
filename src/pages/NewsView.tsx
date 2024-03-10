@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { IonContent, IonPage, IonLoading, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage, IonLoading, IonHeader, IonTitle, IonToolbar, IonMenuButton } from '@ionic/react';
 
 const NewsView: React.FC = () => {
   const [newsData, setNewsData] = useState<any[]>([]);
@@ -28,7 +28,8 @@ const NewsView: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Anime News</IonTitle>
+          <IonMenuButton slot="start" />
+          <IonTitle>Map</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

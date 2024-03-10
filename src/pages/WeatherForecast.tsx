@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { IonContent, IonPage, IonAlert, IonIcon, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage, IonAlert, IonIcon, IonHeader, IonTitle, IonToolbar, IonMenuButton } from '@ionic/react';
 import { thunderstormOutline, rainyOutline, thunderstorm, snowOutline, partlySunnyOutline, cloudOutline, sunnyOutline } from 'ionicons/icons'; // Import Ionicons icons
 
 const WeatherForecast: React.FC = () => {
@@ -44,7 +44,8 @@ const WeatherForecast: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Weather Forecast</IonTitle>
+          <IonMenuButton slot="start" />
+          <IonTitle>Weather Forecast </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

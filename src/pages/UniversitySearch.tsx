@@ -32,6 +32,7 @@ const UniversitySearch: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButton slot="start" />
           <IonTitle>University Search</IonTitle>
         </IonToolbar>
       </IonHeader>
